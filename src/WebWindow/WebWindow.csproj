@@ -33,7 +33,6 @@
     <_NativeLibraries Include="$(NativeOutputDir)WebWindow.Native.dylib" Condition="Exists('$(NativeOutputDir)WebWindow.Native.dylib')" />
     <Content Include="@(_NativeLibraries)">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>%(Filename)%(Extension)</Link>
       <Pack>true</Pack>
       <PackagePath>runtimes/$(NativeAssetRuntimeIdentifier)/native/%(Filename)%(Extension)</PackagePath>
     </Content>
