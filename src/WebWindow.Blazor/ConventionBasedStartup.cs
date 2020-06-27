@@ -53,18 +53,18 @@ namespace WebWindows.Blazor
                 .Where(m => string.Equals(m.Name, "Configure", StringComparison.Ordinal))
                 .ToArray();
 
-            if (methods.Length == 1)
+            if (methods.Length > 1)
             {
                 return methods[0];
             }
-            else if (methods.Length == 0)
-            {
+            //else if (methods.Length == 0)
+            //{
                 throw new InvalidOperationException("The startup class must define a 'Configure' method.");
-            }
-            else
-            {
-                throw new InvalidOperationException("Overloading the 'Configure' method is not supported.");
-            }
+            //}
+            //else
+            //{
+            //    throw new InvalidOperationException("Overloading the 'Configure' method is not supported.");
+            //}
         }
 
         public void ConfigureServices(IServiceCollection services)
